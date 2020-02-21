@@ -1,7 +1,8 @@
 import { Reducer } from 'redux';
 import { ContactsAction, ContactsActionsTypes } from '../../actions/contacts';
+import { Contact } from '../../../types';
 
-type ContactsState = { list: unknown[] };
+type ContactsState = { list: Contact[] };
 
 const defaultState: ContactsState = { list: [] };
 

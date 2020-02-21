@@ -1,4 +1,5 @@
 import React from 'react';
+import { DriverName, DriverDetail } from './ContactCard.styled';
 
 export type CardDetailsProps = {
   name: string;
@@ -16,12 +17,12 @@ export const CardDetails = ({
   expanded
 }: CardDetailsProps) => (
   <>
-    <div>{name}</div>
-    <div>{driverRank}</div>
+    <DriverName>{name}</DriverName>
+    <DriverDetail>{driverRank}</DriverDetail>
     {expanded && (
       <>
-        <div>Phone Number: {phone}</div>
-        <div>Email: {email}</div>
+        <DriverDetail>Phone Number: {phone}</DriverDetail>
+        <DriverDetail>Email: {email}</DriverDetail>
       </>
     )}
   </>

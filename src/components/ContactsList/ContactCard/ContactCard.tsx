@@ -1,10 +1,26 @@
 import React, { useState, useCallback } from 'react';
 import { ContactCardLayout } from './ContactCard.styled';
 import { CardDetails } from './CardDetails';
+import { ProfessionalDriverIcon } from './ProfessionalDriverIcon';
+import { CitizenDriverIcon } from './CitizenDriverIcon';
 
 const CardImage = () => <div />;
 
-export const ContactCard = () => {
+export type ContactCardProps = {
+  name: string;
+  driverRank: string;
+  phone: string;
+  email: string;
+  professional?: boolean;
+};
+
+export const ContactCard = ({
+  name,
+  driverRank,
+  phone,
+  email,
+  professional
+}: ContactCardProps) => {
   const [hovered, setHovered] = useState(false);
 
   const handleMouseEnter = useCallback(() => {
@@ -21,11 +37,12 @@ export const ContactCard = () => {
       onMouseLeave={handleMouseLeave}
     >
       <CardImage />
+      {professional ? <ProfessionalDriverIcon /> : <CitizenDriverIcon />}
       <CardDetails
-        name="Moshe"
-        driverRank="4"
-        phone="123456789"
-        email="email@gmail.com"
+        name={name}
+        driverRank={driverRank}
+        phone={phone}
+        email={email}
         expanded={hovered}
       />
     </ContactCardLayout>
