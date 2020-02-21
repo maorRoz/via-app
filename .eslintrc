@@ -70,7 +70,7 @@
   },
   "overrides": [
     {
-      "files": ["*.tsx"],
+      "files": ["*.tsx", "**/redux/sagas/**"],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "off"
       }

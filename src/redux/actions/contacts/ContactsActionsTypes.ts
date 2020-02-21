@@ -1,0 +1,4 @@
+export enum ContactsActionsTypes {
+  FETCH_CONTACTS_LIST = 'FETCH_CONTACTS_LIST',
+  ADD_CONTACTS_LIST = 'ADD_CONTACTS_LIST'
+}
