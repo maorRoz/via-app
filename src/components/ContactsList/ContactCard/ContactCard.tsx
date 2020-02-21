@@ -1,16 +1,14 @@
 import React, { useState, useCallback } from 'react';
 import { ContactCardLayout } from './ContactCard.styled';
 import { CardDetails } from './CardDetails';
-import { ProfessionalDriverIcon } from './ProfessionalDriverIcon';
-import { CitizenDriverIcon } from './CitizenDriverIcon';
-
-const CardImage = () => <div />;
+import { CardHeader } from './CardHeader';
 
 export type ContactCardProps = {
   name: string;
   driverRank: string;
   phone: string;
   email: string;
+  image: string;
   professional?: boolean;
 };
 
@@ -19,6 +17,7 @@ export const ContactCard = ({
   driverRank,
   phone,
   email,
+  image,
   professional
 }: ContactCardProps) => {
   const [hovered, setHovered] = useState(false);
@@ -36,8 +35,7 @@ export const ContactCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <CardImage />
-      {professional ? <ProfessionalDriverIcon /> : <CitizenDriverIcon />}
+      <CardHeader image={image} professional={professional} />
       <CardDetails
         name={name}
         driverRank={driverRank}

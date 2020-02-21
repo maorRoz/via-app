@@ -11,13 +11,17 @@ export const ContactsList = () => {
   return (
     <ContactsListLayout>
       {contacts.map(
-        ({ name, driverType, driverRank, phone, email }: Contact, index) => (
+        (
+          { name, driverType, driverRank, phone, email, image }: Contact,
+          index
+        ) => (
           <ContactCard
             key={index}
             name={name}
             driverRank={driverRank}
             phone={phone}
             email={email}
+            image={image}
             professional={driverType === DriverType.Professional}
           />
         )

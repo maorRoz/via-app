@@ -16,7 +16,7 @@ export const CardDetails = ({
   email,
   expanded
 }: CardDetailsProps) => (
-  <>
+  <div>
     <DriverName>{name}</DriverName>
     <DriverDetail>{driverRank}</DriverDetail>
     {expanded && (
@@ -25,5 +25,5 @@ export const CardDetails = ({
         <DriverDetail>Email: {email}</DriverDetail>
       </>
     )}
-  </>
+  </div>
 );
