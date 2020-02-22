@@ -20,10 +20,10 @@ export const CardHeaderLayout = styled.div`
 export const CardImageLayout = styled.div`
   position: relative;
   height: 160px;
-  transition: height 1s ease-in-out;
+  transition: height 0.7s ease-in-out;
   overflow: hidden;
   ${ContactCardLayout}:hover & {
-    transition: height 1s ease-in-out;
+    transition: height 0.7s ease-in-out;
     height: 132px;
   }
 
@@ -69,7 +69,7 @@ const fadeIn = keyframes`
 export const AdditionalDetails = styled.div`
   display: none;
   ${ContactCardLayout}:hover & {
-    animation: ${fadeIn} 1s forwards;
+    animation: ${fadeIn} 0.7s forwards;
     display: block;
   }
 `;
