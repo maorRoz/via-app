@@ -1,5 +1,12 @@
-import { FetchContactsListAction, AddContactsListAction } from './actions';
+import {
+  FetchContactsListAction,
+  FetchContactsListErrorAction,
+  AddContactsListAction
+} from './actions';
 
-export type ContactsAction = FetchContactsListAction | AddContactsListAction;
+export type ContactsAction =
+  | FetchContactsListAction
+  | FetchContactsListErrorAction
+  | AddContactsListAction;
 export * from './actions';
 export * from './ContactsActionsTypes';

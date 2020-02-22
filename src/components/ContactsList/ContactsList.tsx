@@ -2,13 +2,17 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { ContactCard } from './ContactCard';
 import { ContactsListLayout } from './ContactsList.styled';
-import { getContactsListSelector } from '../../redux';
+import {
+  getContactsListSelector,
+  isFetchContactsCompletedSelector
+} from '../../redux';
 import { Contact, DriverType } from '../../types';
 
 export const ContactsList = () => {
   const contacts = useSelector(getContactsListSelector);
+  const isLoaded = useSelector(isFetchContactsCompletedSelector);
 
-  return (
+  return isLoaded ? (
     <ContactsListLayout>
       {contacts.map(
         (
@@ -27,5 +31,7 @@ export const ContactsList = () => {
         )
       )}
     </ContactsListLayout>
+  ) : (
+    <div>Loading...</div>
   );
 };
