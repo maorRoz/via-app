@@ -19,12 +19,10 @@ export const CardHeaderLayout = styled.div`
 
 export const CardImageLayout = styled.div`
   position: relative;
-  height: 160px;
-  transition: height 0.7s ease-in-out;
+  max-height: 160px;
   overflow: hidden;
   ${ContactCardLayout}:hover & {
-    transition: height 0.7s ease-in-out;
-    height: 132px;
+    max-height: 132px;
   }
 `;
 
@@ -54,21 +52,19 @@ export const DriverName = styled(DriverDetail)`
 `;
 
 const fadeIn = keyframes` 
-  0% {
-    opacity:0;
-    visibility: hidden;
+  from {
+    opacity: 0;
   }
 
-  100% {
-    opacity:1;
-    visibility: visible;
+  to {
+    opacity: 1;
   }
 `;
 
 export const AdditionalDetails = styled.div`
   display: none;
   ${ContactCardLayout}:hover & {
-    animation: ${fadeIn} 0.7s forwards;
+    animation: ${fadeIn} 0.6s forwards;
     display: block;
   }
 `;
