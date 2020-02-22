@@ -15,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 An error message will be displayed on the page on failed API call
 
 ## Added Loading Message
-A 'Loading...' message will be displayed on the page if the API call is still in process
+A 'Loading...' message will be displayed on the page if the API call is still in-process
 
 ## Added hover background and animations on the `<ContactCard>`
 
@@ -25,7 +25,7 @@ A 'Loading...' message will be displayed on the page if the API call is still in
 
 ## Added CSS-In-JS approach with `Styled-Components`
 
-## Page Content(Contact List) has been implemented using `CSS-GRID` and built in responsive approach like `minmax`
+## Page Content(Contact List) has been implemented using `CSS-GRID` and built-in responsive approach like `minmax`
 
 ## The search is looking for matching contacts names only. It is case-insensitive
 
