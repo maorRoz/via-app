@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   DriverName,
   DriverDetail,
-  AdditionalDetails
+  AdditionalDetails,
+  FilledStarIcon,
+  EmptyStarIcon
 } from './ContactCard.styled';
+import { DriverRank, MAX_DRIVER_RANK } from '../../../types';
 
 export type CardDetailsProps = {
   name: string;
-  driverRank: string;
+  driverRank: DriverRank;
   phone: string;
   email: string;
 };
@@ -17,13 +20,30 @@ export const CardDetails = ({
   driverRank,
   phone,
   email
-}: CardDetailsProps) => (
-  <div>
-    <DriverName>{name}</DriverName>
-    <DriverDetail>{driverRank}</DriverDetail>
-    <AdditionalDetails>
-      <DriverDetail>Phone Number: {phone}</DriverDetail>
-      <DriverDetail>Email: {email}</DriverDetail>
-    </AdditionalDetails>
-  </div>
-);
+}: CardDetailsProps) => {
+  const filledStars = useMemo(() => {
+    const filledStarsArray = new Array(driverRank).fill({});
+    return filledStarsArray.map((star, index) => (
+      <FilledStarIcon key={index} fontSize="small" />
+    ));
+  }, [driverRank]);
+
+  const emptyStars = useMemo(() => {
+    const numberOfEmptyStars = MAX_DRIVER_RANK - filledStars.length;
+    const filledStarsArray = new Array(numberOfEmptyStars).fill({});
+    return filledStarsArray.map((star, index) => (
+      <EmptyStarIcon key={index} fontSize="small" />
+    ));
+  }, [filledStars]);
+  return (
+    <div>
+      <DriverName>{name}</DriverName>
+      {filledStars}
+      {emptyStars}
+      <AdditionalDetails>
+        <DriverDetail>Phone Number: {phone}</DriverDetail>
+        <DriverDetail>Email: {email}</DriverDetail>
+      </AdditionalDetails>
+    </div>
+  );
+};

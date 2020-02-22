@@ -2,10 +2,11 @@ import React from 'react';
 import { ContactCardLayout } from './ContactCard.styled';
 import { CardDetails } from './CardDetails';
 import { CardHeader } from './CardHeader';
+import { DriverRank } from '../../../types';
 
 export type ContactCardProps = {
   name: string;
-  driverRank: string;
+  driverRank: DriverRank;
   phone: string;
   email: string;
   image: string;

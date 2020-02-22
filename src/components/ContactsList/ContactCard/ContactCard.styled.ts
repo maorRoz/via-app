@@ -1,11 +1,13 @@
 import styled, { keyframes } from 'styled-components';
+import StarIcon from '@material-ui/icons/Star';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 export const ContactCardLayout = styled.div`
   border-radius: 5px;
   padding: 10px;
   background-color: white;
   width: 150px;
-  height: 220px;
+  height: 240px;
   overflow: hidden;
   &:hover {
     background-color: #e6ebf5;
@@ -14,7 +16,7 @@ export const ContactCardLayout = styled.div`
 
 export const CardHeaderLayout = styled.div`
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 34px;
 `;
 
 export const CardImageLayout = styled.div`
@@ -72,4 +74,12 @@ export const AdditionalDetails = styled.div`
     animation: ${fadeIn} 0.7s forwards;
     display: block;
   }
+`;
+
+export const FilledStarIcon = styled(StarIcon)`
+  color: orange;
+`;
+
+export const EmptyStarIcon = styled(StarBorderIcon)`
+  color: orange;
 `;
