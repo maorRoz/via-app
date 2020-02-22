@@ -7,7 +7,6 @@ export const ContactCardLayout = styled.div`
   padding: 10px;
   background-color: white;
   justify-self: stretch;
-  overflow: hidden;
   &:hover {
     background-color: #e6ebf5;
   }
@@ -36,8 +35,8 @@ export const CardImage = styled.img`
 
 export const CardIconLayout = styled.div`
   position: absolute;
-  bottom: -24px;
-  left: 10px;
+  bottom: -15%;
+  left: 10%;
 `;
 
 export const CardDetailsLayout = styled.div``;

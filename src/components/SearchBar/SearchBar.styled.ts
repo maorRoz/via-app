@@ -4,7 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 export const SearchBarLayout = styled.div`
   display: flex;
   align-items: center;
-  width: 350px;
+  width: 20vw;
   padding: 3px 10px;
   border-radius: 15px;
   border: 2px solid transparent;

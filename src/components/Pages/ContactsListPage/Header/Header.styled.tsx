@@ -7,7 +7,6 @@ export const HeaderLayout = styled.div`
   top: 0;
   z-index: 1;
   align-items: center;
-  min-width: 550px;
   height: 60px;
   padding-left: 20vw;
   padding-right: 10vw;
