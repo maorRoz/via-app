@@ -2,9 +2,9 @@ import { Reducer } from 'redux';
 import { ContactsAction, ContactsActionsTypes } from '../../actions/contacts';
 import { Contact } from '../../../types';
 
-type ContactsState = { list?: Contact[]; loaded: boolean };
+type ContactsState = { list?: Contact[]; loaded: boolean; searchInput: string };
 
-const defaultState: ContactsState = { loaded: false };
+const defaultState: ContactsState = { loaded: false, searchInput: '' };
 
 export const contactsReducer: Reducer<ContactsState, ContactsAction> = (
   state = defaultState,
@@ -16,6 +16,9 @@ export const contactsReducer: Reducer<ContactsState, ContactsAction> = (
     }
     case ContactsActionsTypes.FETCH_CONTACTS_LIST_ERROR: {
       return { ...state, loaded: true };
+    }
+    case ContactsActionsTypes.UPDATE_SEARCH_INPUT: {
+      return { ...state, searchInput: action.payload.value };
     }
     default:
       return state;

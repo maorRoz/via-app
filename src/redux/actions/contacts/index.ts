@@ -1,12 +1,14 @@
 import {
   FetchContactsListAction,
   FetchContactsListErrorAction,
-  AddContactsListAction
+  AddContactsListAction,
+  UpdateSerchInputAction
 } from './actions';
 
 export type ContactsAction =
   | FetchContactsListAction
   | FetchContactsListErrorAction
-  | AddContactsListAction;
+  | AddContactsListAction
+  | UpdateSerchInputAction;
 export * from './actions';
 export * from './ContactsActionsTypes';

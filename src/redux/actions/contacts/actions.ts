@@ -29,3 +29,13 @@ export const addContactsList = (
   type: ContactsActionsTypes.ADD_CONTACTS_LIST,
   payload: { contactsList }
 });
+
+export interface UpdateSerchInputAction
+  extends Action<ContactsActionsTypes.UPDATE_SEARCH_INPUT> {
+  payload: { value: string };
+}
+
+export const updateSerchInput = (value: string): UpdateSerchInputAction => ({
+  type: ContactsActionsTypes.UPDATE_SEARCH_INPUT,
+  payload: { value }
+});

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Header } from '../../Header';
+import { Header } from './Header';
 import { ContactsList } from '../../ContactsList';
 import { Body } from './ContactsListPage.styled';
 import {
@@ -21,7 +21,7 @@ export const ContactsListPage = () => {
       <Header />
       <Body>
         {isFetchContactsFailed ? (
-          <div>An error has occured while fetching contacts list...</div>
+          <div>An error has occured while fetching contact list...</div>
         ) : (
           <ContactsList />
         )}

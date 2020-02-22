@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { SearchBarLayout, StyledSearchIcon } from './SearchBar.styled';
 
-export const SearchBar = ({ className }: { className?: string }) => (
-  <SearchBarLayout className={className}>
-    <input placeholder="search..." style={{ marginLeft: 'auto' }} />
-    <StyledSearchIcon fontSize="small" />
-  </SearchBarLayout>
-);
+export type SearchBarProps = {
+  className?: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  searchInput?: string;
+};
+
+export const SearchBar = ({
+  className,
+  onChange,
+  searchInput = ''
+}: SearchBarProps) => {
+  return (
+    <SearchBarLayout className={className}>
+      <input placeholder="search..." value={searchInput} onChange={onChange} />
+      <StyledSearchIcon fontSize="small" />
+    </SearchBarLayout>
+  );
+};
