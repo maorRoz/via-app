@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   CardHeaderLayout,
+  CardImageLayout,
   CardImage,
   CardIconLayout
 } from './ContactCard.styled';
@@ -14,7 +15,9 @@ export type CardHeaderProps = {
 
 export const CardHeader = ({ image, professional }: CardHeaderProps) => (
   <CardHeaderLayout>
-    <CardImage src={image} alt="" />
+    <CardImageLayout>
+      <CardImage src={image} alt="" />
+    </CardImageLayout>
     <CardIconLayout>
       {professional ? <ProfessionalDriverIcon /> : <CitizenDriverIcon />}
     </CardIconLayout>

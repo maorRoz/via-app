@@ -14,22 +14,27 @@ export const ContactCardLayout = styled.div`
 
 export const CardHeaderLayout = styled.div`
   position: relative;
-  height: 204px;
+  margin-bottom: 24px;
+`;
+
+export const CardImageLayout = styled.div`
+  position: relative;
+  height: 180px;
   transition: height 1s ease-in-out;
+  overflow: hidden;
   ${ContactCardLayout}:hover & {
     transition: height 1s ease-in-out;
-    height: 176px;
+    height: 152px;
   }
 `;
 
 export const CardImage = styled.img`
-  height: 90%;
   width: 100%;
 `;
 
 export const CardIconLayout = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: -24px;
   left: 10px;
 `;
 
