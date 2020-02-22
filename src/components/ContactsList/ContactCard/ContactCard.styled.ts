@@ -5,7 +5,7 @@ export const ContactCardLayout = styled.div`
   padding: 10px;
   background-color: white;
   width: 150px;
-  height: 240px;
+  height: 220px;
   overflow: hidden;
   &:hover {
     background-color: #e6ebf5;
@@ -19,12 +19,16 @@ export const CardHeaderLayout = styled.div`
 
 export const CardImageLayout = styled.div`
   position: relative;
-  height: 180px;
+  height: 160px;
   transition: height 1s ease-in-out;
   overflow: hidden;
   ${ContactCardLayout}:hover & {
     transition: height 1s ease-in-out;
-    height: 152px;
+    height: 132px;
+  }
+
+  img {
+    min-height: 160px;
   }
 `;
 
