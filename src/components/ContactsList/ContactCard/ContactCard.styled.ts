@@ -14,7 +14,9 @@ export const ContactCardLayout = styled.div`
 export const CardHeaderLayout = styled.div`
   position: relative;
   height: 204px;
+  transition: height 1s ease-in-out;
   ${ContactCardLayout}:hover & {
+    transition: height 1s ease-in-out;
     height: 176px;
   }
 `;
@@ -33,9 +35,11 @@ export const CardIconLayout = styled.div`
 export const DriverDetail = styled.div`
   font-size: 10.5px;
   color: grey;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
-export const DriverName = styled.div`
+export const DriverName = styled(DriverDetail)`
   font-size: 16px;
-  color: grey;
 `;
