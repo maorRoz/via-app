@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { SearchBar } from '../SearchBar';
 
 export const HeaderLayout = styled.div`
   display: flex;
@@ -12,4 +13,8 @@ export const HeaderLayout = styled.div`
 export const HeaderName = styled.div`
   color: white;
   font-size: 22px;
+`;
+
+export const ContactsListSearchBar = styled(SearchBar)`
+  margin-left: auto;
 `;
