@@ -1,11 +1,8 @@
 import React, { useCallback, ChangeEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateSerchInput, getSearchInputSelector } from '../../../../redux';
-import {
-  HeaderLayout,
-  HeaderName,
-  ContactsListSearchBar
-} from './Header.styled';
+import { HeaderLayout, HeaderName } from './Header.styled';
+import { SearchBar } from '../../../SearchBar';
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -22,10 +19,7 @@ export const Header = () => {
   return (
     <HeaderLayout>
       <HeaderName>Contact List</HeaderName>
-      <ContactsListSearchBar
-        onChange={handleSearchInput}
-        searchInput={searchInput}
-      />
+      <SearchBar onChange={handleSearchInput} searchInput={searchInput} />
     </HeaderLayout>
   );
 };

@@ -6,8 +6,7 @@ export const ContactCardLayout = styled.div`
   border-radius: 5px;
   padding: 10px;
   background-color: white;
-  width: 150px;
-  height: 240px;
+  justify-self: stretch;
   overflow: hidden;
   &:hover {
     background-color: #e6ebf5;
