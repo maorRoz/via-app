@@ -13,10 +13,13 @@ export type CardHeaderProps = {
   professional?: boolean;
 };
 
+const defaultPicture =
+  'https://images-na.ssl-images-amazon.com/images/G/01/author-pages/no-profile-image-placeholder-na._CB484118601_.png';
+
 export const CardHeader = ({ image, professional }: CardHeaderProps) => (
   <CardHeaderLayout>
     <CardImageLayout>
-      <CardImage src={image} alt="" />
+      <CardImage src={image || defaultPicture} alt="Profile_Image" />
     </CardImageLayout>
     <CardIconLayout>
       {professional ? <ProfessionalDriverIcon /> : <CitizenDriverIcon />}

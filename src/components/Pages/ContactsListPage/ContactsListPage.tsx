@@ -17,7 +17,7 @@ export const ContactsListPage = () => {
     dispatch(fetchContactsList);
   }, [dispatch]);
   return (
-    <div>
+    <>
       <Header />
       <Body>
         {isFetchContactsFailed ? (
@@ -26,6 +26,6 @@ export const ContactsListPage = () => {
           <ContactsList />
         )}
       </Body>
-    </div>
+    </>
   );
 };

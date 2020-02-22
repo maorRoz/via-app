@@ -28,13 +28,10 @@ export const CardImageLayout = styled.div`
     transition: height 0.7s ease-in-out;
     height: 132px;
   }
-
-  img {
-    min-height: 160px;
-  }
 `;
 
 export const CardImage = styled.img`
+  min-height: 160px;
   width: 100%;
 `;
 
@@ -43,6 +40,8 @@ export const CardIconLayout = styled.div`
   bottom: -24px;
   left: 10px;
 `;
+
+export const CardDetailsLayout = styled.div``;
 
 export const DriverDetail = styled.div`
   font-size: 10.5px;

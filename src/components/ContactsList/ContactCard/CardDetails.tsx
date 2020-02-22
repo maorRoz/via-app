@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import {
+  CardDetailsLayout,
   DriverName,
   DriverDetail,
   AdditionalDetails,
@@ -36,14 +37,16 @@ export const CardDetails = ({
     ));
   }, [filledStars]);
   return (
-    <div>
+    <CardDetailsLayout>
       <DriverName>{name}</DriverName>
-      {filledStars}
-      {emptyStars}
+      <div style={{ display: 'flex' }}>
+        {filledStars}
+        {emptyStars}
+      </div>
       <AdditionalDetails>
         <DriverDetail>Phone Number: {phone}</DriverDetail>
         <DriverDetail>Email: {email}</DriverDetail>
       </AdditionalDetails>
-    </div>
+    </CardDetailsLayout>
   );
 };

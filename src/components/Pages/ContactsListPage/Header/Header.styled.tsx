@@ -3,6 +3,9 @@ import { SearchBar } from '../../../SearchBar';
 
 export const HeaderLayout = styled.div`
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   align-items: center;
   height: 60px;
   padding-left: 100px;
