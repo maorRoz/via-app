@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import { ContactCardLayout } from './ContactCard.styled';
 import { CardDetails } from './CardDetails';
 import { CardHeader } from './CardHeader';
@@ -19,30 +19,14 @@ export const ContactCard = ({
   email,
   image,
   professional
-}: ContactCardProps) => {
-  const [hovered, setHovered] = useState(false);
-
-  const handleMouseEnter = useCallback(() => {
-    setHovered(true);
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setHovered(false);
-  }, []);
-
-  return (
-    <ContactCardLayout
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <CardHeader image={image} professional={professional} />
-      <CardDetails
-        name={name}
-        driverRank={driverRank}
-        phone={phone}
-        email={email}
-        expanded={hovered}
-      />
-    </ContactCardLayout>
-  );
-};
+}: ContactCardProps) => (
+  <ContactCardLayout>
+    <CardHeader image={image} professional={professional} />
+    <CardDetails
+      name={name}
+      driverRank={driverRank}
+      phone={phone}
+      email={email}
+    />
+  </ContactCardLayout>
+);

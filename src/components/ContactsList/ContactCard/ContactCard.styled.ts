@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const ContactCardLayout = styled.div`
   border-radius: 5px;
@@ -6,6 +6,7 @@ export const ContactCardLayout = styled.div`
   background-color: white;
   width: 150px;
   height: 240px;
+  overflow: hidden;
   &:hover {
     background-color: #e6ebf5;
   }
@@ -42,4 +43,24 @@ export const DriverDetail = styled.div`
 
 export const DriverName = styled(DriverDetail)`
   font-size: 16px;
+`;
+
+const fadeIn = keyframes` 
+  0% {
+    opacity:0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity:1;
+    visibility: visible;
+  }
+`;
+
+export const AdditionalDetails = styled.div`
+  visibility: hidden;
+  opacity: 0;
+  ${ContactCardLayout}:hover & {
+    animation: ${fadeIn} 1s forwards;
+  }
 `;

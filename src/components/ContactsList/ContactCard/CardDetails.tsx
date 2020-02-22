@@ -1,29 +1,29 @@
 import React from 'react';
-import { DriverName, DriverDetail } from './ContactCard.styled';
+import {
+  DriverName,
+  DriverDetail,
+  AdditionalDetails
+} from './ContactCard.styled';
 
 export type CardDetailsProps = {
   name: string;
   driverRank: string;
   phone: string;
   email: string;
-  expanded?: boolean;
 };
 
 export const CardDetails = ({
   name,
   driverRank,
   phone,
-  email,
-  expanded
+  email
 }: CardDetailsProps) => (
   <div>
     <DriverName>{name}</DriverName>
     <DriverDetail>{driverRank}</DriverDetail>
-    {expanded && (
-      <>
-        <DriverDetail>Phone Number: {phone}</DriverDetail>
-        <DriverDetail>Email: {email}</DriverDetail>
-      </>
-    )}
+    <AdditionalDetails>
+      <DriverDetail>Phone Number: {phone}</DriverDetail>
+      <DriverDetail>Email: {email}</DriverDetail>
+    </AdditionalDetails>
   </div>
 );
