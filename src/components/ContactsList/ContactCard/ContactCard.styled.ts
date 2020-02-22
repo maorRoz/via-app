@@ -58,9 +58,9 @@ const fadeIn = keyframes`
 `;
 
 export const AdditionalDetails = styled.div`
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   ${ContactCardLayout}:hover & {
     animation: ${fadeIn} 1s forwards;
+    display: block;
   }
 `;
